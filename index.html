@@ -1,0 +1,91 @@
+<html>
+
+<head>
+  <style>
+    #setting-1:checked~.v-1,
+    #setting-1:checked~p .v-1 {
+      display: initial !important;
+    }
+
+    #setting-2:checked~.v-1,
+    #setting-2:checked~p .v-1,
+    #setting-2:checked~.v-2,
+    #setting-2:checked~p .v-2 {
+      display: initial !important;
+    }
+
+    #setting-3:checked~.v-1,
+    #setting-3:checked~p .v-1,
+    #setting-3:checked~.v-2,
+    #setting-3:checked~p .v-2,
+    #setting-3:checked~.v-3,
+    #setting-3:checked~p .v-3 {
+      display: initial !important;
+    }
+
+    .v-0,
+    p {
+      color: #010101;
+    }
+
+    .v-1,
+    .v-2,
+    .v-3 {
+      display: none;
+    }
+
+    .v-1 {
+      color: #4b5560;
+    }
+
+    .v-2 {
+      color: #586069;
+    }
+
+    .v-3 {
+      color: #808b98;
+    }
+
+    input[type=checkbox]:checked+[class^=v-] {
+      display: initial;
+    }
+  </style>
+  <title>more or less</title>
+</head>
+
+<body>
+  <label>General settings</label>
+  <input type="radio" id="setting-0" name="verbosity-scale" checked />
+  <label for="setting-0">0 (Succinct)</label>
+  <input type="radio" id="setting-1" name="verbosity-scale" />
+  <label for="setting-1">1</label>
+  <input type="radio" id="setting-2" name="verbosity-scale" />
+  <label for="setting-2">2</label>
+  <input type="radio" id="setting-3" name="verbosity-scale" />
+  <label for="setting-3">3 (Verbose)</label>
+
+  <p>More or less is an idea about a new style of writing
+    <span class="v-1"> in which readers control their reading experience
+      <span class="v-2"> by opting in to the level of granularity at which they would like to read
+        <span class="v-3">(this is done by either 1) adjusting the general settings above, which sets the verbosity level for the entire page,
+          or 2) expanding on an individual sentence by clicking on its respective checkbox or the preceding text)</span>
+      </span>
+    </span>
+    .
+  </p>
+
+  <p>This is a proof-of-concept
+    <span class="v-1">that only uses CSS to perform the showing/hiding of text of various verbosities
+      <span class="v-2">, although this site as a whole does use JavaScript to perform some DOM manipulations on page load
+        <span class="v-3">
+          (you can get a fully-functioning JS-free version of this site by saving this HTML document and ignoring the script tag at
+          the bottom)
+        </span>
+      </span>
+    </span>.
+  </p>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
